@@ -28,10 +28,15 @@ public class RegisterPage {
 
     public void inputRegisterInfoAndSignUp(String name, String address, String email, String mobile, String password, String confirmPassword){
         onView(withId(R.id.input_name)).check(matches(isDisplayed())).perform(typeText(name));
+        Espresso.closeSoftKeyboard();
         onView(withId(R.id.input_address)).check(matches(isDisplayed())).perform(typeText(address));
+        Espresso.closeSoftKeyboard();
         onView(withId(R.id.input_email)).check(matches(isDisplayed())).perform(typeText(email));
+        Espresso.closeSoftKeyboard();
         onView(withId(R.id.input_mobile)).check(matches(isDisplayed())).perform(typeText(mobile));
+        Espresso.closeSoftKeyboard();
         onView(withId(R.id.input_password)).check(matches(isDisplayed())).perform(typeText(password));
+        Espresso.closeSoftKeyboard();
         onView(withId(R.id.input_reEnterPassword)).perform(scrollTo()).check(matches(isDisplayed())).perform(typeText(confirmPassword));
         Espresso.closeSoftKeyboard();
         onView(withId(R.id.btn_signup)).check(matches(isDisplayed())).perform(click());
