@@ -1,10 +1,11 @@
 package com.sourcey.materiallogindemo.Page
 
-import android.support.test.espresso.Espresso
+import android.support.test.espresso.Espresso.closeSoftKeyboard
 
 import com.sourcey.materiallogindemo.R
 
 import android.support.test.espresso.Espresso.onView
+import android.support.test.espresso.ViewInteraction
 import android.support.test.espresso.action.ViewActions.click
 import android.support.test.espresso.action.ViewActions.typeText
 import android.support.test.espresso.assertion.ViewAssertions.matches
@@ -17,29 +18,36 @@ import android.support.test.espresso.matcher.ViewMatchers.withText
  */
 
 class LoginPage : BasePage() {
-    fun goToRegisterPage(): RegisterPage {
-        onView(withId(R.id.link_signup)).check(matches(isDisplayed())).perform(click())
-        return RegisterPage()
+
+    val lnkSignUp: ViewInteraction = onView(withId(R.id.link_signup))
+    val txtEmail: ViewInteraction = onView(withText("Email"))
+    val txtInputEmail: ViewInteraction = onView(withId(R.id.input_email))
+    val txtPassword: ViewInteraction = onView(withText("Password"))
+    val txtInputPassword: ViewInteraction = onView(withId(R.id.input_password))
+    val btnLogin: ViewInteraction = onView(withId(R.id.btn_login))
+
+    fun goToRegisterPage() {
+        lnkSignUp.check(matches(isDisplayed())).perform(click())
     }
 
     @Throws(InterruptedException::class)
     fun VerifyObjectOnLoginPage() {
-        Thread.sleep(1000)
-        onView(withText("Email")).check(matches(isDisplayed()))
-        onView(withId(R.id.input_email)).check(matches(isDisplayed()))
-        onView(withText("Password")).check(matches(isDisplayed()))
-        onView(withId(R.id.input_password)).check(matches(isDisplayed()))
-        onView(withId(R.id.btn_login)).check(matches(isDisplayed()))
-        onView(withId(R.id.link_signup)).check(matches(isDisplayed()))
+        isVisible(txtInputEmail,1000)
+        txtEmail.check(matches(isDisplayed()))
+        txtInputEmail.check(matches(isDisplayed()))
+        txtPassword.check(matches(isDisplayed()))
+        txtInputPassword.check(matches(isDisplayed()))
+        btnLogin.check(matches(isDisplayed()))
+        lnkSignUp.check(matches(isDisplayed()))
     }
 
     @Throws(InterruptedException::class)
     fun inputLoginPageAndLogin(email: String, password: String) {
-        Thread.sleep(1000)
-        onView(withId(R.id.input_email)).check(matches(isDisplayed())).perform(typeText(email))
-        onView(withId(R.id.input_password)).check(matches(isDisplayed())).perform(typeText(password))
-        Espresso.closeSoftKeyboard()
-        onView(withId(R.id.btn_login)).check(matches(isDisplayed())).perform(click())
+        isVisible(txtInputEmail,1000)
+        txtInputEmail.check(matches(isDisplayed())).perform(typeText(email))
+        txtInputPassword.check(matches(isDisplayed())).perform(typeText(password))
+        closeSoftKeyboard()
+        btnLogin.check(matches(isDisplayed())).perform(click())
     }
 }
 

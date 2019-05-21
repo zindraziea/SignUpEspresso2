@@ -15,7 +15,7 @@ import android.support.test.espresso.matcher.ViewMatchers.hasErrorText
 
 class VerifyTextEditUtility {
     @Throws(InterruptedException::class)
-    fun verifyTextErrorMessage(matcher: Matcher<View>, errorMessage: String="") {
+    fun verifyTextErrorMessage(matcher: Matcher<View>, errorMessage: String?) {
         Thread.sleep(1000)
         onView(matcher).perform(click())
         onView(matcher).check(matches(hasErrorText(errorMessage)))
