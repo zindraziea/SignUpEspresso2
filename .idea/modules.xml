@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SCB_QAAutomate_Quiz_V2_JirathEak.iml" filepath="$PROJECT_DIR$/SCB_QAAutomate_Quiz_V2_JirathEak.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SignUpEspresso.iml" filepath="$PROJECT_DIR$/SignUpEspresso.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
