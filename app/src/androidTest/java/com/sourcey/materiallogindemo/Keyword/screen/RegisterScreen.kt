@@ -1,4 +1,4 @@
-package com.sourcey.materiallogindemo.Page
+package com.sourcey.materiallogindemo.Keyword.screen
 
 import android.support.test.espresso.Espresso.closeSoftKeyboard
 
@@ -17,7 +17,7 @@ import android.support.test.espresso.matcher.ViewMatchers.withId
  * Created by JirathEak on 17/3/2018 AD.
  */
 
-class RegisterPage : BasePage() {
+class RegisterScreen : BaseScreen() {
 
     val txtInputName: ViewInteraction = onView(withId(R.id.input_name))
     val txtInputAddress: ViewInteraction = onView(withId(R.id.input_address))
@@ -27,31 +27,38 @@ class RegisterPage : BasePage() {
     val txtInputReEnterPassword: ViewInteraction = onView(withId(R.id.input_reEnterPassword))
     val btnSignUp: ViewInteraction = onView(withId(R.id.btn_signup))
 
-    @Throws(InterruptedException::class)
-    fun inputRegisterInfoAndSignUpSuccess(name: String, address: String, email: String, mobile: String, password: String, confirmPassword: String) {
-        inputRegisterInfoAndSignUp(name, address, email, mobile, password, confirmPassword)
-    }
-
-    @Throws(InterruptedException::class)
-    fun inputRegisterInfoAndSignUpFail(name: String, address: String, email: String, mobile: String, password: String, confirmPassword: String) {
-        inputRegisterInfoAndSignUp(name, address, email, mobile, password, confirmPassword)
-    }
-
-    fun inputRegisterInfoAndSignUp(name: String, address: String, email: String, mobile: String, password: String, confirmPassword: String) {
+    fun iInputName(name: String) {
         txtInputName.check(matches(isDisplayed())).perform(typeText(name))
         closeSoftKeyboard()
-        txtInputAddress.check(matches(isDisplayed())).perform(typeText(address))
-        closeSoftKeyboard()
-        txtInputEmail.check(matches(isDisplayed())).perform(typeText(email))
-        closeSoftKeyboard()
-        txtInputMobile.check(matches(isDisplayed())).perform(typeText(mobile))
-        closeSoftKeyboard()
-        txtInputPassword.check(matches(isDisplayed())).perform(typeText(password))
-        closeSoftKeyboard()
-        txtInputReEnterPassword.perform(scrollTo()).check(matches(isDisplayed())).perform(typeText(confirmPassword))
-        closeSoftKeyboard()
-        btnSignUp.check(matches(isDisplayed())).perform(click())
     }
 
+    fun iInputAddress(address: String) {
+        txtInputAddress.check(matches(isDisplayed())).perform(typeText(address))
+        closeSoftKeyboard()
+    }
+
+    fun iInputEmail(email: String) {
+        txtInputEmail.check(matches(isDisplayed())).perform(typeText(email))
+        closeSoftKeyboard()
+    }
+
+    fun iInputMobile(mobile: String) {
+        txtInputMobile.check(matches(isDisplayed())).perform(typeText(mobile))
+        closeSoftKeyboard()
+    }
+
+    fun iInputPassword(password: String) {
+        txtInputPassword.check(matches(isDisplayed())).perform(typeText(password))
+        closeSoftKeyboard()
+    }
+
+    fun iInputReEnterPassword(confirmPassword: String) {
+        txtInputReEnterPassword.perform(scrollTo()).check(matches(isDisplayed())).perform(typeText(confirmPassword))
+        closeSoftKeyboard()
+    }
+
+    fun iClickBtnSignUp() {
+        btnSignUp.check(matches(isDisplayed())).perform(click())
+    }
 
 }

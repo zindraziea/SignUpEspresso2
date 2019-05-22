@@ -1,4 +1,4 @@
-package com.sourcey.materiallogindemo.Page
+package com.sourcey.materiallogindemo.Keyword.screen
 
 import android.support.test.espresso.Espresso.closeSoftKeyboard
 
@@ -17,37 +17,60 @@ import android.support.test.espresso.matcher.ViewMatchers.withText
  * Created by JirathEak on 17/3/2018 AD.
  */
 
-class LoginPage : BasePage() {
+class LoginScreen : BaseScreen() {
 
-    val lnkSignUp: ViewInteraction = onView(withId(R.id.link_signup))
+    val btnSignUp: ViewInteraction = onView(withId(R.id.link_signup))
     val txtEmail: ViewInteraction = onView(withText("Email"))
     val txtInputEmail: ViewInteraction = onView(withId(R.id.input_email))
     val txtPassword: ViewInteraction = onView(withText("Password"))
     val txtInputPassword: ViewInteraction = onView(withId(R.id.input_password))
     val btnLogin: ViewInteraction = onView(withId(R.id.btn_login))
 
-    fun goToRegisterPage() {
-        lnkSignUp.check(matches(isDisplayed())).perform(click())
+    fun iClickBtnRegister() {
+        btnSignUp.check(matches(isDisplayed())).perform(click())
     }
 
-    @Throws(InterruptedException::class)
-    fun VerifyObjectOnLoginPage() {
-        isVisible(txtInputEmail,1000)
+    fun iCanSeeLoginScreen() {
+        isVisible(txtInputEmail, 1000)
+    }
+
+    fun iVerifyTxtEmailShouldbeDisplayed() {
         txtEmail.check(matches(isDisplayed()))
-        txtInputEmail.check(matches(isDisplayed()))
-        txtPassword.check(matches(isDisplayed()))
-        txtInputPassword.check(matches(isDisplayed()))
-        btnLogin.check(matches(isDisplayed()))
-        lnkSignUp.check(matches(isDisplayed()))
     }
 
-    @Throws(InterruptedException::class)
-    fun inputLoginPageAndLogin(email: String, password: String) {
-        isVisible(txtInputEmail,1000)
+    fun iVerifyTxtInputEmailShouldbeDisplayed() {
+        txtInputEmail.check(matches(isDisplayed()))
+    }
+
+    fun iInputEmail(email: String) {
         txtInputEmail.check(matches(isDisplayed())).perform(typeText(email))
+        closeSoftKeyboard()
+    }
+
+    fun iVerifyTxtPasswordShouldbeDisplayed() {
+        txtPassword.check(matches(isDisplayed()))
+    }
+
+    fun iVerifyTxtInputPasswordShouldbeDisplayed() {
+        txtInputPassword.check(matches(isDisplayed()))
+    }
+
+    fun iInputPassword(password: String) {
         txtInputPassword.check(matches(isDisplayed())).perform(typeText(password))
         closeSoftKeyboard()
+    }
+
+    fun iVerifyBtnLoginShouldbeDisplayed() {
+        btnLogin.check(matches(isDisplayed()))
+    }
+
+    fun iClickBtnLogin() {
         btnLogin.check(matches(isDisplayed())).perform(click())
     }
+
+    fun iVerifyBtnSignUpShouldbeDisplayed() {
+        btnSignUp.check(matches(isDisplayed()))
+    }
+
 }
 
