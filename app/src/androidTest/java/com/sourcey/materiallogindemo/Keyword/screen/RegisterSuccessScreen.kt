@@ -1,7 +1,6 @@
 package com.sourcey.materiallogindemo.Keyword.screen
 
 import com.sourcey.materiallogindemo.R
-
 import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.ViewInteraction
 import android.support.test.espresso.action.ViewActions.click
@@ -16,16 +15,8 @@ import android.support.test.espresso.matcher.ViewMatchers.withText
 
 class RegisterSuccessScreen : BaseScreen() {
 
-    val txtSignupSuccess: ViewInteraction = onView(withText("Hello world!"))
-    val btnLogOut: ViewInteraction = onView(withId(R.id.btn_logout))
-
-    @Throws(InterruptedException::class)
-    fun verifyRegisterSuccess() {
-        iCanSeeSignUpSuccessScreen()
-        iVerifyTxtSignUpSuccessShouldBeDisplay()
-        iVerifyBtnLogOutShouldBeDisplay()
-        iClickBtnLogOut()
-    }
+    private val txtSignupSuccess: ViewInteraction by lazy {onView(withText("Hello world!"))}
+    private val btnLogOut: ViewInteraction by lazy {onView(withId(R.id.btn_logout))}
 
     fun iCanSeeSignUpSuccessScreen() {
         txtSignupSuccess.check(matches(isDisplayed()))

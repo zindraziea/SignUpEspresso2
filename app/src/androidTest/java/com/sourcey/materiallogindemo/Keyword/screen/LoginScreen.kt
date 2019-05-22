@@ -1,9 +1,7 @@
 package com.sourcey.materiallogindemo.Keyword.screen
 
 import android.support.test.espresso.Espresso.closeSoftKeyboard
-
 import com.sourcey.materiallogindemo.R
-
 import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.ViewInteraction
 import android.support.test.espresso.action.ViewActions.click
@@ -12,6 +10,7 @@ import android.support.test.espresso.assertion.ViewAssertions.matches
 import android.support.test.espresso.matcher.ViewMatchers.isDisplayed
 import android.support.test.espresso.matcher.ViewMatchers.withId
 import android.support.test.espresso.matcher.ViewMatchers.withText
+import com.sourcey.materiallogindemo.utility.VerifyTextEditUtility
 
 /**
  * Created by JirathEak on 17/3/2018 AD.
@@ -19,12 +18,13 @@ import android.support.test.espresso.matcher.ViewMatchers.withText
 
 class LoginScreen : BaseScreen() {
 
-    val btnSignUp: ViewInteraction = onView(withId(R.id.link_signup))
-    val txtEmail: ViewInteraction = onView(withText("Email"))
-    val txtInputEmail: ViewInteraction = onView(withId(R.id.input_email))
-    val txtPassword: ViewInteraction = onView(withText("Password"))
-    val txtInputPassword: ViewInteraction = onView(withId(R.id.input_password))
-    val btnLogin: ViewInteraction = onView(withId(R.id.btn_login))
+    private val verifyTextEdit by lazy {VerifyTextEditUtility()}
+    private val btnSignUp: ViewInteraction by lazy {onView(withId(R.id.link_signup))}
+    private val txtEmail: ViewInteraction by lazy {onView(withText("Email"))}
+    private val txtInputEmail: ViewInteraction by lazy {onView(withId(R.id.input_email))}
+    private val txtPassword: ViewInteraction by lazy {onView(withText("Password"))}
+    private val txtInputPassword: ViewInteraction by lazy {onView(withId(R.id.input_password))}
+    private val btnLogin: ViewInteraction by lazy {onView(withId(R.id.btn_login))}
 
     fun iClickBtnRegister() {
         btnSignUp.check(matches(isDisplayed())).perform(click())
@@ -70,6 +70,14 @@ class LoginScreen : BaseScreen() {
 
     fun iVerifyBtnSignUpShouldbeDisplayed() {
         btnSignUp.check(matches(isDisplayed()))
+    }
+
+    fun iVerifyLoginError(errorMessage: String?) {
+        verifyTextEdit.verifyTextErrorMessage(txtInputEmail, errorMessage)
+    }
+
+    fun iVerifyPasswordError(errorMessage: String?) {
+        verifyTextEdit.verifyTextErrorMessage(txtInputPassword, errorMessage)
     }
 
 }

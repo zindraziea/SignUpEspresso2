@@ -1,12 +1,11 @@
 package com.sourcey.materiallogindemo.Keyword.feature
 
-import android.support.test.espresso.Espresso.closeSoftKeyboard
 import com.sourcey.materiallogindemo.Keyword.screen.BaseScreen
 import com.sourcey.materiallogindemo.Keyword.screen.LoginScreen
 
 class Login : BaseScreen() {
 
-    internal var loginScreen = LoginScreen()
+    private val loginScreen by lazy {LoginScreen()}
 
     fun VerifyObjectOnLoginPage() {
         loginScreen.iCanSeeLoginScreen()
@@ -23,5 +22,10 @@ class Login : BaseScreen() {
         loginScreen.iInputEmail(email)
         loginScreen.iInputPassword(password)
         loginScreen.iClickBtnLogin()
+    }
+
+    fun iVerifyErrorMessage(loginError: String?, passwordError: String?) {
+        loginScreen.iVerifyLoginError(loginError)
+        loginScreen.iVerifyPasswordError(passwordError)
     }
 }

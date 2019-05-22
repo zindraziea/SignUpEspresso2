@@ -16,14 +16,12 @@ import com.sourcey.materiallogindemo.Keyword.screen.BaseScreen
  */
 
 class VerifyTextEditUtility : BaseScreen() {
-    @Throws(InterruptedException::class)
     fun verifyTextErrorMessage(matcher: Matcher<View>, errorMessage: String?) {
         isVisible(onView(matcher))
         onView(matcher).perform(click())
         onView(matcher).check(matches(hasErrorText(errorMessage)))
     }
 
-    @Throws(InterruptedException::class)
     fun verifyTextErrorMessage(interaction: ViewInteraction, errorMessage: String?) {
         isVisible(interaction)
         interaction.perform(click())
