@@ -19,7 +19,7 @@ class RegisterSuccessScreen : BaseScreen() {
     private val btnLogOut: ViewInteraction by lazy {onView(withId(R.id.btn_logout))}
 
     fun iCanSeeSignUpSuccessScreen() {
-        txtSignupSuccess.check(matches(isDisplayed()))
+        isVisible(txtSignupSuccess)
     }
 
     fun iVerifyTxtSignUpSuccessShouldBeDisplay() {
