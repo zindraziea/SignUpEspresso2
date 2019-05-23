@@ -35,7 +35,11 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                idlingResource.increment();
                 login();
+                if (!idlingResource.isIdleNow()) {
+                    idlingResource.decrement();
+                }
             }
         });
 
@@ -49,11 +53,12 @@ public class LoginActivity extends AppCompatActivity {
                 startActivityForResult(intent, REQUEST_SIGNUP);
                 finish();
                 overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+                if (!idlingResource.isIdleNow()) {
+                    idlingResource.decrement();
+                }
             }
         });
-        if (!idlingResource.isIdleNow()) {
-            idlingResource.decrement();
-        }
+
 
     }
 
@@ -86,6 +91,9 @@ public class LoginActivity extends AppCompatActivity {
                         progressDialog.dismiss();
                     }
                 }, 3000);
+        if (!idlingResource.isIdleNow()) {
+            idlingResource.decrement();
+        }
     }
 
 

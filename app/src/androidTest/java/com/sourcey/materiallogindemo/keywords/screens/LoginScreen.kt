@@ -1,8 +1,7 @@
-package com.sourcey.materiallogindemo.Keyword.screen
+package com.sourcey.materiallogindemo.keywords.screens
 
-import android.support.test.espresso.Espresso.closeSoftKeyboard
+import android.support.test.espresso.Espresso.*
 import com.sourcey.materiallogindemo.R
-import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.ViewInteraction
 import android.support.test.espresso.action.ViewActions.click
 import android.support.test.espresso.action.ViewActions.typeText

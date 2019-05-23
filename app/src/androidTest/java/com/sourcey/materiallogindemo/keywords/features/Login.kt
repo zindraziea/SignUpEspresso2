@@ -1,9 +1,8 @@
-package com.sourcey.materiallogindemo.Keyword.feature
+package com.sourcey.materiallogindemo.keywords.features
 
-import com.sourcey.materiallogindemo.Keyword.screen.BaseScreen
-import com.sourcey.materiallogindemo.Keyword.screen.LoginScreen
+import com.sourcey.materiallogindemo.keywords.screens.LoginScreen
 
-class Login : BaseScreen() {
+object Login {
 
     private val loginScreen by lazy {LoginScreen()}
 

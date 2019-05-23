@@ -9,7 +9,7 @@ import android.support.test.espresso.ViewInteraction
 import android.support.test.espresso.action.ViewActions.click
 import android.support.test.espresso.assertion.ViewAssertions.matches
 import android.support.test.espresso.matcher.ViewMatchers.hasErrorText
-import com.sourcey.materiallogindemo.Keyword.screen.BaseScreen
+import com.sourcey.materiallogindemo.keywords.screens.BaseScreen
 
 /**
  * Created by JirathEak on 17/3/2018 AD.

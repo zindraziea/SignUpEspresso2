@@ -1,12 +1,11 @@
-package com.sourcey.materiallogindemo.Keyword.feature
+package com.sourcey.materiallogindemo.keywords.features
 
 import android.support.test.espresso.Espresso.pressBack
-import com.sourcey.materiallogindemo.Keyword.screen.BaseScreen
-import com.sourcey.materiallogindemo.Keyword.screen.LoginScreen
-import com.sourcey.materiallogindemo.Keyword.screen.RegisterScreen
-import com.sourcey.materiallogindemo.Keyword.screen.RegisterSuccessScreen
+import com.sourcey.materiallogindemo.keywords.screens.LoginScreen
+import com.sourcey.materiallogindemo.keywords.screens.RegisterScreen
+import com.sourcey.materiallogindemo.keywords.screens.RegisterSuccessScreen
 
-class Register  : BaseScreen() {
+object Register {
 
     private val loginScreen by lazy {LoginScreen()}
     private val registerScreen by lazy {RegisterScreen()}

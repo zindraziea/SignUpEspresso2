@@ -52,9 +52,6 @@ public class SignupActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
             }
         });
-        if (!idlingResource.isIdleNow()) {
-            idlingResource.decrement();
-        }
     }
 
     public void signup() {

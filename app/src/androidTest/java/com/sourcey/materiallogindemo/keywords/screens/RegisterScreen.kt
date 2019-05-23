@@ -1,4 +1,4 @@
-package com.sourcey.materiallogindemo.Keyword.screen
+package com.sourcey.materiallogindemo.keywords.screens
 
 import android.support.test.espresso.Espresso.closeSoftKeyboard
 import com.sourcey.materiallogindemo.R
@@ -19,6 +19,7 @@ import com.sourcey.materiallogindemo.utility.VerifyTextEditUtility
 class RegisterScreen : BaseScreen() {
 
     private val txtInputName: ViewInteraction by lazy {onView(withId(R.id.input_name))}
+    private val txtInputName2: ViewInteraction by lazy {onView(withIndex(withId(R.id.input_name),0))}
     private val txtInputAddress: ViewInteraction by lazy {onView(withId(R.id.input_address))}
     private val txtInputEmail: ViewInteraction by lazy {onView(withId(R.id.input_email))}
     private val txtInputMobile: ViewInteraction by lazy {onView(withId(R.id.input_mobile))}
@@ -28,7 +29,7 @@ class RegisterScreen : BaseScreen() {
     private val verifyTextEdit by lazy {VerifyTextEditUtility()}
 
     fun iInputName(name: String) {
-        txtInputName.check(matches(isDisplayed())).perform(typeText(name))
+        txtInputName2.check(matches(isDisplayed())).perform(typeText(name))
         closeSoftKeyboard()
     }
 

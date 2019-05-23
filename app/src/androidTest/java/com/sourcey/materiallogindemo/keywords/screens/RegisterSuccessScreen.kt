@@ -1,4 +1,4 @@
-package com.sourcey.materiallogindemo.Keyword.screen
+package com.sourcey.materiallogindemo.keywords.screens
 
 import com.sourcey.materiallogindemo.R
 import android.support.test.espresso.Espresso.onView

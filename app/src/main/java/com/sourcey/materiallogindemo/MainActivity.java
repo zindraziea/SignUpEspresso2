@@ -2,6 +2,7 @@ package com.sourcey.materiallogindemo;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.test.espresso.idling.CountingIdlingResource;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
 
     static String email;
     static String password;
+    private final CountingIdlingResource idlingResource = EspressoIdlingResource.getCountingIdlingResource();
+
 
     @BindView(R.id.btn_logout)
     Button _logout;

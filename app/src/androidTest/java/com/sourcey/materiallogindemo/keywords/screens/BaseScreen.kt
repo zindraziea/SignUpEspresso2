@@ -1,4 +1,4 @@
-package com.sourcey.materiallogindemo.Keyword.screen
+package com.sourcey.materiallogindemo.keywords.screens
 
 /**
  * Created by JirathEak on 17/3/2018 AD.
@@ -13,10 +13,15 @@ import android.support.test.espresso.matcher.ViewMatchers
 import android.support.test.espresso.matcher.ViewMatchers.isDisplayed
 import android.support.test.espresso.util.TreeIterables
 import com.sourcey.materiallogindemo.EspressoIdlingResource
+import org.hamcrest.BaseMatcher
+import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.junit.After
 import org.junit.Before
 import java.util.concurrent.CountDownLatch
+import android.annotation.SuppressLint
+import org.hamcrest.TypeSafeMatcher
+
 
 private val TIMEOUT_MILLISECONDS = 5000
 private val SLEEP_MILLISECONDS = 100
@@ -35,7 +40,6 @@ open class BaseScreen{
         IdlingRegistry.getInstance().unregister(EspressoIdlingResource.getCountingIdlingResource())
     }
 
-    @Throws(InterruptedException::class)
     fun isVisible(interaction: ViewInteraction, millis: Long= TIMEOUT_MILLISECONDS.toLong()): Boolean? {
         interaction.withFailureHandler({ error, viewMatcher -> wasDisplayed = false })
         if (wasDisplayed) {
@@ -55,7 +59,6 @@ open class BaseScreen{
         return isVisible(interaction)
     }
 
-    @Throws(InterruptedException::class)
     fun isVisible(viewMatcher: Matcher<View>, millis: Long= TIMEOUT_MILLISECONDS.toLong()): Boolean? {
         val found = arrayOfNulls<Boolean>(1)
 
@@ -99,4 +102,23 @@ open class BaseScreen{
         return found[0]
     }
 
+    fun withIndex(matcher: Matcher<View>, index: Int): Matcher<View> {
+        return object : TypeSafeMatcher<View>() {
+            private var currentIndex: Int = 0
+            private var viewObjHash: Int = 0
+
+            @SuppressLint("DefaultLocale")
+            override fun describeTo(description: Description) {
+                description.appendText(String.format("with index: %d ", index))
+                matcher.describeTo(description)
+            }
+
+            override fun matchesSafely(view: View): Boolean {
+                if (matcher.matches(view) && currentIndex++ == index) {
+                    viewObjHash = view.hashCode()
+                }
+                return view.hashCode() == viewObjHash
+            }
+        }
+    }
 }
