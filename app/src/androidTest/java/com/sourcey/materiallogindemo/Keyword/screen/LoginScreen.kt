@@ -27,6 +27,7 @@ class LoginScreen : BaseScreen() {
     private val btnLogin: ViewInteraction by lazy {onView(withId(R.id.btn_login))}
 
     fun iClickBtnRegister() {
+        isVisible(btnSignUp)
         btnSignUp.check(matches(isDisplayed())).perform(click())
     }
 

@@ -5,17 +5,17 @@ package com.sourcey.materiallogindemo.Keyword.screen
  */
 
 import android.content.ContentValues
+import android.support.test.espresso.*
 import android.util.Log
 import android.view.View
-import android.support.test.espresso.Espresso
-import android.support.test.espresso.UiController
-import android.support.test.espresso.ViewAction
-import android.support.test.espresso.ViewInteraction
 import android.support.test.espresso.assertion.ViewAssertions.matches
 import android.support.test.espresso.matcher.ViewMatchers
 import android.support.test.espresso.matcher.ViewMatchers.isDisplayed
 import android.support.test.espresso.util.TreeIterables
+import com.sourcey.materiallogindemo.EspressoIdlingResource
 import org.hamcrest.Matcher
+import org.junit.After
+import org.junit.Before
 import java.util.concurrent.CountDownLatch
 
 private val TIMEOUT_MILLISECONDS = 5000
@@ -24,6 +24,17 @@ private var time = 0
 private var wasDisplayed = false
 
 open class BaseScreen{
+
+    @Before
+    fun registerIdlingResource() {
+        IdlingRegistry.getInstance().register(EspressoIdlingResource.getCountingIdlingResource())
+    }
+
+    @After
+    fun unregisterIdlingResource() {
+        IdlingRegistry.getInstance().unregister(EspressoIdlingResource.getCountingIdlingResource())
+    }
+
     @Throws(InterruptedException::class)
     fun isVisible(interaction: ViewInteraction, millis: Long= TIMEOUT_MILLISECONDS.toLong()): Boolean? {
         interaction.withFailureHandler({ error, viewMatcher -> wasDisplayed = false })

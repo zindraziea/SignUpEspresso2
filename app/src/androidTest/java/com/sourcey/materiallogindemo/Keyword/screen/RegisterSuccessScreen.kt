@@ -27,6 +27,7 @@ class RegisterSuccessScreen : BaseScreen() {
     }
 
     fun iVerifyBtnLogOutShouldBeDisplay() {
+        isVisible(btnLogOut)
         btnLogOut.check(matches(isDisplayed()))
     }
 
