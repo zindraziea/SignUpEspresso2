@@ -12,14 +12,6 @@ class Register  : BaseScreen() {
     private val registerScreen by lazy {RegisterScreen()}
     private val registerSuccessScreen by lazy {RegisterSuccessScreen()}
 
-    fun inputRegisterInfoAndSignUpSuccess(name: String, address: String, email: String, mobile: String, password: String, confirmPassword: String) {
-        inputRegisterInfoAndSignUp(name, address, email, mobile, password, confirmPassword)
-    }
-
-    fun inputRegisterInfoAndSignUpFail(name: String, address: String, email: String, mobile: String, password: String, confirmPassword: String) {
-        inputRegisterInfoAndSignUp(name, address, email, mobile, password, confirmPassword)
-    }
-
     fun inputRegisterInfoAndSignUp(name: String, address: String, email: String, mobile: String, password: String, confirmPassword: String) {
         registerScreen.iInputName(name)
         registerScreen.iInputAddress(address)
