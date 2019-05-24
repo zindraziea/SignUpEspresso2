@@ -23,42 +23,36 @@ class LoginTest {
     val mActivityTestRule = ActivityTestRule<MainActivity>(MainActivity::class.java)
 
     @Test
-    @Throws(InterruptedException::class)
     fun testLoginIgnoreEmailPassword_Fail_TCLogin0001() {
         Login.inputLoginPageAndLogin("", "")
         Login.iVerifyErrorMessage("enter a valid email address","between 4 and 10 alphanumeric characters")
     }
 
     @Test
-    @Throws(InterruptedException::class)
     fun testLoginInvalidEmail_Fail_TCLogin0002() {
         Login.inputLoginPageAndLogin("test1@a", "a1234")
         Login.iVerifyErrorMessage("enter a valid email address",null)
     }
 
     @Test
-    @Throws(InterruptedException::class)
     fun testLoginIgnorePassword_Fail_TCLogin0003() {
         Login.inputLoginPageAndLogin("test1@a.com", "")
         Login.iVerifyErrorMessage(null,"between 4 and 10 alphanumeric characters")
     }
 
     @Test
-    @Throws(InterruptedException::class)
     fun testLoginInputPasswordLessThan4_Fail_TCLogin0004() {
         Login.inputLoginPageAndLogin("test1@a.com", "a12")
         Login.iVerifyErrorMessage(null,"between 4 and 10 alphanumeric characters")
     }
 
     @Test
-    @Throws(InterruptedException::class)
     fun testLoginInputPasswordMoreThan10_Fail_TCLogin0005() {
         Login.inputLoginPageAndLogin("test1@a.com", "a1234567890")
         Login.iVerifyErrorMessage(null,"between 4 and 10 alphanumeric characters")
     }
 
     @Test
-    @Throws(InterruptedException::class)
     fun testLoginInvalidEmailPassword_Fail_TCLogin0001() {
         Login.inputLoginPageAndLogin("test1@a.com", "a1234567")
         Login.iVerifyErrorMessage(null,"enter a valid email address or password")
