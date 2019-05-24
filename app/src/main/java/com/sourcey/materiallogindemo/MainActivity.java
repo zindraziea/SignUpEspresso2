@@ -17,8 +17,6 @@ public class MainActivity extends AppCompatActivity {
 
     static String email;
     static String password;
-    private final CountingIdlingResource idlingResource = EspressoIdlingResource.getCountingIdlingResource();
-
 
     @BindView(R.id.btn_logout)
     Button _logout;

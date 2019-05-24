@@ -18,7 +18,6 @@ import butterknife.ButterKnife;
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
-    private final CountingIdlingResource idlingResource = EspressoIdlingResource.getCountingIdlingResource();
 
     @BindView(R.id.input_email) EditText _emailText;
     @BindView(R.id.input_password) EditText _passwordText;
@@ -35,11 +34,7 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                idlingResource.increment();
                 login();
-                if (!idlingResource.isIdleNow()) {
-                    idlingResource.decrement();
-                }
             }
         });
 
@@ -48,14 +43,10 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Start the Signup activity
-                idlingResource.increment();
                 Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
                 startActivityForResult(intent, REQUEST_SIGNUP);
                 finish();
                 overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
-                if (!idlingResource.isIdleNow()) {
-                    idlingResource.decrement();
-                }
             }
         });
 
@@ -91,9 +82,6 @@ public class LoginActivity extends AppCompatActivity {
                         progressDialog.dismiss();
                     }
                 }, 3000);
-        if (!idlingResource.isIdleNow()) {
-            idlingResource.decrement();
-        }
     }
 
 

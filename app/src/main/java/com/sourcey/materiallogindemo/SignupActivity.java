@@ -18,7 +18,6 @@ import butterknife.ButterKnife;
 public class SignupActivity extends AppCompatActivity {
     private static final String TAG = "SignupActivity";
     private static final String RESOURCE = "GLOBAL";
-    private final CountingIdlingResource idlingResource = EspressoIdlingResource.getCountingIdlingResource();
 
     @BindView(R.id.input_name) EditText _nameText;
     @BindView(R.id.input_address) EditText _addressText;
@@ -56,12 +55,9 @@ public class SignupActivity extends AppCompatActivity {
 
     public void signup() {
         Log.d(TAG, "Signup");
-        idlingResource.increment();
         if (!validate()) {
             onSignupFailed();
-            if (!idlingResource.isIdleNow()) {
-                idlingResource.decrement();
-            }
+
             return;
         }
 
@@ -91,9 +87,6 @@ public class SignupActivity extends AppCompatActivity {
                         progressDialog.dismiss();
                     }
                 }, 3000);
-        if (!idlingResource.isIdleNow()) {
-            idlingResource.decrement();
-        }
     }
 
 
