@@ -33,14 +33,8 @@ dependencies {
 
     // App's dependencies, including test
     implementation 'com.android.support:support-annotations:28.0.0'
-    implementation("com.android.support.test.espresso:espresso-idling-resource:$espressoLibrary") {
-        force = true
-    }
 
     // Testing-only dependencies
-    androidTestImplementation('com.android.support.test:runner:1.0.1')
-    androidTestImplementation("com.android.support.test.espresso:espresso-core:$espressoLibrary")
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 repositories {
     mavenCentral()

@@ -27,7 +27,7 @@
         <compilerSettings />
         <compilerArguments>
           <option name="destination" value="$MODULE_DIR$/build/tmp/kotlin-classes/debug" />
-          <option name="classpath" value="$USER_HOME$/.gradle/caches/transforms-2/files-2.1/11bebfd100d8ca99686e77e7d4b84312/jars/classes.jar:/Users/jiratheak/.gradle/caches/transforms-2/files-2.1/899a142ddb4df054fe3b194af41312ac/jars/classes.jar:/Users/jiratheak/.gradle/caches/transforms-2/files-2.1/20cd33aa9dd671005afff19027b3b417/jars/classes.jar:/Users/jiratheak/.gradle/caches/transforms-2/files-2.1/ef66c5cbe99f7c9b8382e544918854f8/jars/classes.jar:/Users/jiratheak/.gradle/caches/transforms-2/files-2.1/f48b55b8a54b42dc8801631e16f1e45e/jars/classes.jar:/Users/jiratheak/.gradle/caches/transforms-2/files-2.1/bf68d549b37b264942f7d2a2d69163ec/jars/classes.jar:/Users/jiratheak/.gradle/caches/transforms-2/files-2.1/40f47aea63af6b8894d0c21c493b4497/jars/classes.jar:/Users/jiratheak/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-annotations/8.8.1/bc373fb6bc7bca3035041b924f158fd2b946ee8d/butterknife-annotations-8.8.1.jar:/Users/jiratheak/.gradle/caches/transforms-2/files-2.1/fcfe32296559bd0a9cb58664085d8132/jars/classes.jar:/Users/jiratheak/.gradle/caches/transforms-2/files-2.1/33f3a787feb8696036f44ea8d8c1aea0/jars/classes.jar:/Users/jiratheak/.gradle/caches/transforms-2/files-2.1/67cc532e0792083115f7c0a5413cfca3/jars/classes.jar:/Users/jiratheak/.gradle/caches/transforms-2/files-2.1/45a564290146a626afd35583ca333ff5/jars/classes.jar:/Users/jiratheak/.gradle/caches/transforms-2/files-2.1/9ed5e2c189c2b95c851299470b95c535/jars/classes.jar:/Users/jiratheak/.gradle/caches/transforms-2/files-2.1/a8b418c987d494b4a80d1aa409c36122/jars/classes.jar:/Users/jiratheak/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/28.0.0/ed73f5337a002d1fd24339d5fb08c2c9d9ca60d8/support-annotations-28.0.0.jar:/Users/jiratheak/.gradle/caches/transforms-2/files-2.1/bd374fa3819761bdce03eafc58752700/jars/classes.jar:/Users/jiratheak/.gradle/caches/modules-2/files-2.1/android.arch.lifecycle/common/1.0.0/e414a4cb28434e25c4f6aa71426eb20cf4874ae9/common-1.0.0.jar:/Users/jiratheak/.gradle/caches/modules-2/files-2.1/android.arch.core/common/1.0.0/a2d487452376193fc8c103dd2b9bd5f2b1b44563/common-1.0.0.jar:/Users/jiratheak/.gradle/caches/transforms-2/files-2.1/2e2e70f505d9ac38369c94ceadabb098/jars/classes.jar:/Users/jiratheak/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/1.3.31/e652770b6416c6d85934086899ffed3eccd35813/kotlin-stdlib-jdk7-1.3.31.jar:/Users/jiratheak/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.31/11289d20fd95ae219333f3456072be9f081c30cc/kotlin-stdlib-1.3.31.jar:/Users/jiratheak/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.3.31/20c34a04ea25cb1ef0139598bd67c764562cb170/kotlin-stdlib-common-1.3.31.jar:/Users/jiratheak/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar:/Users/jiratheak/Library/Android/sdk/platforms/android-26/android.jar" />
+          <option name="classpath" value="$USER_HOME$/.gradle/caches/transforms-2/files-2.1/11bebfd100d8ca99686e77e7d4b84312/jars/classes.jar:/Users/jiratheak/.gradle/caches/transforms-2/files-2.1/899a142ddb4df054fe3b194af41312ac/jars/classes.jar:/Users/jiratheak/.gradle/caches/transforms-2/files-2.1/20cd33aa9dd671005afff19027b3b417/jars/classes.jar:/Users/jiratheak/.gradle/caches/transforms-2/files-2.1/ef66c5cbe99f7c9b8382e544918854f8/jars/classes.jar:/Users/jiratheak/.gradle/caches/transforms-2/files-2.1/f48b55b8a54b42dc8801631e16f1e45e/jars/classes.jar:/Users/jiratheak/.gradle/caches/transforms-2/files-2.1/bf68d549b37b264942f7d2a2d69163ec/jars/classes.jar:/Users/jiratheak/.gradle/caches/transforms-2/files-2.1/40f47aea63af6b8894d0c21c493b4497/jars/classes.jar:/Users/jiratheak/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-annotations/8.8.1/bc373fb6bc7bca3035041b924f158fd2b946ee8d/butterknife-annotations-8.8.1.jar:/Users/jiratheak/.gradle/caches/transforms-2/files-2.1/fcfe32296559bd0a9cb58664085d8132/jars/classes.jar:/Users/jiratheak/.gradle/caches/transforms-2/files-2.1/33f3a787feb8696036f44ea8d8c1aea0/jars/classes.jar:/Users/jiratheak/.gradle/caches/transforms-2/files-2.1/67cc532e0792083115f7c0a5413cfca3/jars/classes.jar:/Users/jiratheak/.gradle/caches/transforms-2/files-2.1/45a564290146a626afd35583ca333ff5/jars/classes.jar:/Users/jiratheak/.gradle/caches/transforms-2/files-2.1/9ed5e2c189c2b95c851299470b95c535/jars/classes.jar:/Users/jiratheak/.gradle/caches/transforms-2/files-2.1/a8b418c987d494b4a80d1aa409c36122/jars/classes.jar:/Users/jiratheak/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/28.0.0/ed73f5337a002d1fd24339d5fb08c2c9d9ca60d8/support-annotations-28.0.0.jar:/Users/jiratheak/.gradle/caches/transforms-2/files-2.1/bd374fa3819761bdce03eafc58752700/jars/classes.jar:/Users/jiratheak/.gradle/caches/modules-2/files-2.1/android.arch.lifecycle/common/1.0.0/e414a4cb28434e25c4f6aa71426eb20cf4874ae9/common-1.0.0.jar:/Users/jiratheak/.gradle/caches/modules-2/files-2.1/android.arch.core/common/1.0.0/a2d487452376193fc8c103dd2b9bd5f2b1b44563/common-1.0.0.jar:/Users/jiratheak/Library/Android/sdk/platforms/android-26/android.jar" />
           <option name="noStdlib" value="true" />
           <option name="noReflect" value="true" />
           <option name="moduleName" value="app_debug" />
@@ -147,39 +147,23 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 26 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.3.31@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.android.support.test.espresso:espresso-idling-resource:3.0.1@aar" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.android.support.test.espresso:espresso-core:3.0.1@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.jakewharton:butterknife-annotations:8.8.1@jar" level="project" />
-    <orderEntry type="library" name="Gradle: android.arch.core:common:1.0.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.android.support:support-v4:26.1.0@aar" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.squareup:javawriter:2.1.1@jar" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.android.support.test:rules:1.0.1@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.android.support:transition:26.1.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.android.support:support-media-compat:26.1.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: org.jetbrains:annotations:13.0@jar" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.google.code.findbugs:jsr305:2.0.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:runtime:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:design:26.1.0@aar" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: javax.inject:javax.inject:1@jar" level="project" />
-    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.3.31@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-fragment:26.1.0@aar" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: junit:junit:4.12@jar" level="project" />
-    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.31@jar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:common:1.0.0@jar" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.hamcrest:hamcrest-core:1.3@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:appcompat-v7:26.1.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.jakewharton:butterknife-annotations:8.8.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-core-utils:26.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-vector-drawable:26.1.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: android.arch.core:common:1.0.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:recyclerview-v7:26.1.0@aar" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.hamcrest:hamcrest-library:1.3@jar" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.hamcrest:hamcrest-integration:1.3@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support:support-v4:26.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-annotations:28.0.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.jakewharton:butterknife:8.8.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-compat:26.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-core-ui:26.1.0@aar" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.android.support.test:runner:1.0.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support:transition:26.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:animated-vector-drawable:26.1.0@aar" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: net.sf.kxml:kxml2:2.3.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support:support-media-compat:26.1.0@aar" level="project" />
   </component>
 </module>

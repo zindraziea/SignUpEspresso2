@@ -2,7 +2,6 @@ package com.sourcey.materiallogindemo;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.test.espresso.idling.CountingIdlingResource;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
