@@ -1,5 +1,3 @@
-# SCB_QAAutomate_Quiz_V2_JirathEak
-
 How to Install
 - Open Android Studio.
 -	Click Open an existing Android Studio project.
