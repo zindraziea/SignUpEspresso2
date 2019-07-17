@@ -20,6 +20,8 @@ import org.junit.After
 import org.junit.Before
 import java.util.concurrent.CountDownLatch
 import android.annotation.SuppressLint
+import android.support.design.widget.TextInputLayout
+import android.support.test.espresso.matcher.BoundedMatcher
 import org.hamcrest.TypeSafeMatcher
 
 
@@ -118,6 +120,19 @@ open class BaseScreen{
                     viewObjHash = view.hashCode()
                 }
                 return view.hashCode() == viewObjHash
+            }
+        }
+    }
+
+    fun withItemHint(matcherText: String): Matcher<View> {
+        return object : BoundedMatcher<View, TextInputLayout>(TextInputLayout::class.java) {
+
+            override fun describeTo(description: Description) {
+                description.appendText("with item hint: $matcherText")
+            }
+
+            override fun matchesSafely(editTextField: TextInputLayout): Boolean {
+                return matcherText.equals(editTextField.hint!!.toString(), ignoreCase = true)
             }
         }
     }
